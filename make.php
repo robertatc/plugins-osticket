@@ -408,7 +408,7 @@ class PluginBuilder extends Module {
                     $full = rtrim(dirname(__file__).'/lib/'.$lib,'/').'/';
                     $files = new RecursiveIteratorIterator(
                         new RecursiveDirectoryIterator($full),
-                            RecursiveIteratorIterator::SELF_FIRST);
+                            RecursiveIteratorIterator::CHILD_FIRST);
                     foreach ($files as $f) {
                         if (file_exists("$plugin/$phar_path"))
                             // Hydrated
